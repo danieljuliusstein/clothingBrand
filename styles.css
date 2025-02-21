@@ -1074,7 +1074,19 @@ footer {
     transition: transform 0.3s ease, color 0.2s ease;
     padding: 5px;
 }
-
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.2s ease;
+    padding: 5px;
+}
+.modal-close:hover {
+    transform: rotate(90deg);
+    color: #ff4757;
+}
 .close-wishlist:hover {
     transform: rotate(90deg);
     color: #ff4757;
@@ -1506,4 +1518,142 @@ footer {
     .quick-view-modal .modal-content {
         width: 90%;
     }
+}
+/* Deals Section */
+.deals {
+    padding: 4rem 2rem;
+    background: var(--background-color);
+}
+
+.deals h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    font-size: 2rem;
+}
+
+/* Adjust Hero for Banner Feel */
+.hero {
+    height: 400px; /* Slimmer banner-like height */
+}
+
+.hero-slider {
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-content {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    max-width: 50%;
+}
+
+.slide-content h1 {
+    font-size: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 300px;
+    }
+    .slide-content h1 {
+        font-size: 1.5rem;
+    }
+    .slide-content p {
+        font-size: 0.9rem;
+    }
+    .cta-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+/* Add to styles.css */
+.search-suggestions {
+    position: absolute;
+    top: 100%; /* Below the search bar */
+    left: 0;
+    right: 0;
+    max-width: 400px; /* Matches .search-bar max-width */
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-md);
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+}
+
+.search-suggestions .suggestion-item {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.search-suggestions .suggestion-item:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+.search-suggestions .suggestion-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+}
+
+/* Ensure search bar positioning supports dropdown */
+.search-bar {
+    position: relative; /* Allows absolute positioning of suggestions */
+}
+/* Customize Tippy dropdown */
+.tippy-box {
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-md);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+}
+
+.tippy-content {
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.suggestion-item {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.suggestion-item:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+.suggestion-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+}
+
+/* Ensure search bar positioning */
+.search-bar {
+    position: relative;
 }
