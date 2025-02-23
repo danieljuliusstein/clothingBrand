@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Threads | Women's Fashion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Promotional Banner -->
+    <div class="promo-banner">
+        <span>Summer Sale: 20% Off Everything! Use Code: SUMMER20</span>
+        <button class="close-promo">×</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="top-nav">
+        <div class="nav-left">
+            <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+                <i class="fas fa-bars nav-icon"></i>
+            </button>
+            <div class="logo">Stylish Threads</div>
+        </div>
+        <div class="nav-center">
+            <div class="search-bar">
+                <input type="text" id="product-search" placeholder="Search products..." />
+                <button id="search-button" aria-label="Search"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <div class="nav-right">
+            <button class="account-btn" aria-label="Account">
+                <i class="fas fa-user-circle nav-icon"></i>
+            </button>
+            <button class="wishlist-btn" aria-label="Wishlist">
+                <i class="fas fa-heart nav-icon"></i>
+                <span class="wishlist-count">0</span>
+            </button>
+            <button class="cart-btn" aria-label="Shopping Cart">
+                <i class="fas fa-shopping-bag nav-icon"></i>
+                <span id="cart-count">0</span>
+            </button>
+        </div>
+    </nav>
+    <div class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="men.html">Men</a>
+        <a href="women.html" class="active">Women</a>
+        
+    </div>
+
+    <!-- Main Content: Women's Fashion -->
+    <section class="category-page">
+        <h1>Women's Fashion</h1>
+        <div class="products-grid">
+            <!-- Women's Product 1 -->
+            <div class="product-card" data-category="women">
+                <span class="product-badge badge-new">New</span>
+                <div class="product-image">
+                    <img src="https://picsum.photos/300/401" alt="Floral Dress">
+                    <button class="wishlist-toggle" aria-label="Add to Wishlist">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div class="quick-add" aria-label="Quick Add to Cart">Quick View</div>
+                </div>
+                <div class="product-info">
+                    <h3>Floral Dress</h3>
+                    <div class="product-meta">
+                        <p class="price">$39.99</p>
+                        <div class="colors">
+                            <span class="color" style="background: #ff69b4"></span>
+                            <span class="color" style="background: #87ceeb"></span>
+                        </div>
+                    </div>
+                    <select class="size-select">
+                        <option value="">Select Size</option>
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                    </select>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Women's Product 2 -->
+            <div class="product-card" data-category="women">
+                <div class="product-image">
+                    <img src="https://picsum.photos/300/405" alt="Denim Jeans">
+                    <button class="wishlist-toggle" aria-label="Add to Wishlist">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div class="quick-add" aria-label="Quick Add to Cart">Quick View</div>
+                </div>
+                <div class="product-info">
+                    <h3>High-Waisted Denim Jeans</h3>
+                    <div class="product-meta">
+                        <p class="price">$59.99</p>
+                        <div class="colors">
+                            <span class="color" style="background: #483d8b"></span>
+                            <span class="color" style="background: #000080"></span>
+                        </div>
+                    </div>
+                    <select class="size-select">
+                        <option value="">Select Size</option>
+                        <option value="28">28</option>
+                        <option value="30">30</option>
+                        <option value="32">32</option>
+                    </select>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Women's Product 3 -->
+            <div class="product-card" data-category="women">
+                <span class="product-badge badge-sale">20% Off</span>
+                <div class="product-image">
+                    <img src="https://picsum.photos/300/403" alt="Silk Blouse">
+                    <button class="wishlist-toggle" aria-label="Add to Wishlist">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div class="quick-add" aria-label="Quick Add to Cart">Quick View</div>
+                </div>
+                <div class="product-info">
+                    <h3>Silk Blouse</h3>
+                    <div class="product-meta">
+                        <p class="price" data-original="$49.99">$39.99</p>
+                        <div class="colors">
+                            <span class="color" style="background: #ff4757"></span>
+                            <span class="color" style="background: #ffffff"></span>
+                        </div>
+                    </div>
+                    <select class="size-select">
+                        <option value="">Select Size</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Stylish Threads. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shared Components -->
+    <div class="modal" id="loginModal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" id="close-modal-btn">×</button>
+            <h2>Sign In</h2>
+            <form id="login-form" class="login-form">
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit" id="login-button">Sign In</button>
+                <p>Don't have an account? <a href="#">Sign Up</a></p>
+            </form>
+            <p id="login-error-message" class="error-message"></p>
+        </div>
+    </div>
+
+    <div class="modal quick-view-modal" id="quickViewModal">
+        <div class="modal-content">
+            <button class="modal-close">×</button>
+            <div class="quick-view-content"></div>
+        </div>
+    </div>
+
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+            <button class="modal-close" id="close-checkout-modal">×</button>
+            <h2>Confirm Purchase</h2>
+            <p>Are you sure you want to proceed with your purchase?</p>
+            <button id="confirm-checkout" class="cta-button">Yes, Checkout</button>
+            <button id="cancel-checkout" class="modal-close">No, Go Back</button>
+        </div>
+    </div>
+
+    <div class="cart-sidebar" aria-expanded="false">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart">×</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-amount" id="cart-total">$0.00</span>
+            </div>
+            <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <div class="wishlist-sidebar" aria-expanded="false">
+        <div class="wishlist-header">
+            <h3>Your Wishlist</h3>
+            <button class="close-wishlist">×</button>
+        </div>
+        <div class="wishlist-items" id="wishlist-items"></div>
+    </div>
+
+    <button id="back-to-top">↑</button>
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

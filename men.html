@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Threads | Men's Fashion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Promotional Banner -->
+    <div class="promo-banner">
+        <span>Summer Sale: 20% Off Everything! Use Code: SUMMER20</span>
+        <button class="close-promo">×</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="top-nav">
+        <div class="nav-left">
+            <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+                <i class="fas fa-bars nav-icon"></i>
+            </button>
+            <div class="logo">Stylish Threads</div>
+        </div>
+        <div class="nav-center">
+            <div class="search-bar">
+                <input type="text" id="product-search" placeholder="Search products..." />
+                <button id="search-button" aria-label="Search"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <div class="nav-right">
+            <button class="account-btn" aria-label="Account"><i class="fas fa-user-circle nav-icon"></i></button>
+            <button class="wishlist-btn" aria-label="Wishlist">
+                <i class="fas fa-heart nav-icon"></i><span class="wishlist-count">0</span>
+            </button>
+            <button class="cart-btn" aria-label="Shopping Cart">
+                <i class="fas fa-shopping-bag nav-icon"></i><span id="cart-count">0</span>
+            </button>
+        </div>
+    </nav>
+    <div class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="men.html" class="active">Men</a>
+        <a href="women.html">Women</a>
+    </div>
+
+    <!-- Main Content -->
+    <section class="category-page">
+        <h1>Men's Fashion</h1>
+        <div class="products-grid">
+            <!-- Example Men's Products -->
+            <div class="product-card" data-category="men">
+                <div class="product-image">
+                    <img src="https://picsum.photos/300/400" alt="Men's Jacket">
+                    <button class="wishlist-toggle" aria-label="Add to Wishlist"><i class="far fa-heart"></i></button>
+                    <div class="quick-add">Quick View</div>
+                </div>
+                <div class="product-info">
+                    <h3>Men's Jacket</h3>
+                    <div class="product-meta">
+                        <p class="price">$89.99</p>
+                        <div class="colors">
+                            <span class="color" style="background: #000"></span>
+                            <span class="color" style="background: #8b4513"></span>
+                        </div>
+                    </div>
+                    <select class="size-select">
+                        <option value="">Select Size</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more men's products as needed -->
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Stylish Threads. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include Shared Components -->
+    <div class="modal" id="loginModal" aria-hidden="true">...</div>
+    <div class="modal quick-view-modal" id="quickViewModal">...</div>
+    <div class="modal" id="checkoutModal">...</div>
+    <div class="cart-sidebar" aria-expanded="false">...</div>
+    <div class="wishlist-sidebar" aria-expanded="false">...</div>
+    <button id="back-to-top">↑</button>
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

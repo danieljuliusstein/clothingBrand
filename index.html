@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Added for ESSENCE grid compatibility -->
 </head>
 <body>
     <!-- Promotional Banner -->
@@ -20,7 +21,7 @@
     <!-- Navigation -->
     <nav class="top-nav">
         <div class="nav-left">
-            <button class="menu-toggle" aria-label="Toggle Menu">
+            <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
                 <i class="fas fa-bars nav-icon"></i>
             </button>
             <div class="logo">Stylish Threads</div>
@@ -46,279 +47,78 @@
         </div>
     </nav>
     <div class="main-nav">
-        <a href="#" class="active">Home</a>
-        <a href="#">Men</a>
-        <a href="#">Women</a>
-        <a href="#">Accessories</a>
-        <a href="#">Deals</a>
+        <a href="index.html" class="active">Home</a>
+        <a href="men.html">Men</a>
+        <a href="women.html">Women</a>
     </div>
 
-    <!-- Hero Banner -->
-    <section class="hero">
-        <div class="hero-slider">
-            <div class="slide active">
-                <div class="slide-content">
-                    <h1>Summer Collection 2025</h1>
-                    <p>Shop the latest trends now!</p>
-                    <button class="cta-button" id="cta-button">Shop Now</button>
-                </div>
-                <img src="https://picsum.photos/1920/600" alt="Summer Collection">
+    <!-- Hero Carousel (from Stylish Threads) -->
+    <section class="hero relative h-[600px] touch-slider">
+        <div class="hero-slider h-full">
+          <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000 active">
+            <div class="slide-content absolute top-1/2 left-5 transform -translate-y-1/2 text-white">
+              <h1 class="text-5xl font-bold mb-4 animate-fade-in">Elevate Your Essence</h1>
+              <p class="text-xl mb-8 animate-fade-in delay-200">Premium fitness wear for the dedicated</p>
+              <button class="cta-button bg-white text-black px-8 py-3 hover:bg-gray-100 transition animate-fade-in delay-400" onclick="document.querySelector('#products').scrollIntoView({ behavior: 'smooth' })">Shop Now</button>
             </div>
-            <div class="slide">
-                <div class="slide-content">
-                    <h1>Exclusive Deals</h1>
-                    <p>Up to 50% off select items</p>
-                    <button class="cta-button">Explore Deals</button>
-                </div>
-                <img src="https://picsum.photos/1920/601" alt="Deals Banner">
+            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f" alt="Elevate Your Essence" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+            <div class="slide-content absolute top-1/2 left-5 transform -translate-y-1/2 text-white">
+              <h1 class="text-5xl font-bold mb-4 animate-fade-in">New Collection</h1>
+              <p class="text-xl mb-8 animate-fade-in delay-200">Discover the latest in performance wear</p>
+              <button class="cta-button bg-white text-black px-8 py-3 hover:bg-gray-100 transition animate-fade-in delay-400" onclick="document.querySelector('#products').scrollIntoView({ behavior: 'smooth' })">Shop Collection</button>
             </div>
+            <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155" alt="New Collection" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+            <div class="slide-content absolute top-1/2 left-5 transform -translate-y-1/2 text-white">
+              <h1 class="text-5xl font-bold mb-4 animate-fade-in">Train in Style</h1>
+              <p class="text-xl mb-8 animate-fade-in delay-200">Performance meets aesthetics</p>
+              <button class="cta-button bg-white text-black px-8 py-3 hover:bg-gray-100 transition animate-fade-in delay-400" onclick="document.querySelector('#products').scrollIntoView({ behavior: 'smooth' })">Explore Now</button>
+            </div>
+            <img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2" alt="Train in Style" class="w-full h-full object-cover" loading="lazy">
+          </div>
         </div>
-        <button class="slider-arrow prev" aria-label="Previous slide">
-            <i class="fas fa-chevron-left"></i>
+        <button id="prevSlide" class="slider-arrow prev absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full backdrop-blur-sm transition-all duration-300" aria-label="Previous slide">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
         </button>
-        <button class="slider-arrow next" aria-label="Next slide">
-            <i class="fas fa-chevron-right"></i>
+        <button id="nextSlide" class="slider-arrow next absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full backdrop-blur-sm transition-all duration-300" aria-label="Next slide">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
         </button>
-    </section>
+      </section>
 
-    <!-- Deals Section -->
-    <section class="deals">
-        <h2>Today’s Top Deals</h2>
-        <div class="products-grid">
-            <div class="product-card" data-category="men">
-                <span class="product-badge badge-sale">50% Off</span>
-                <div class="product-image">
-                    <img src="https://picsum.photos/300/400" alt="Leather Jacket">
-                    <button class="wishlist-toggle" aria-label="Add to Wishlist">
-                        <i class="far fa-heart"></i>
-                    </button>
-                    <div class="quick-add">Quick View</div>
-                </div>
-                <div class="product-info">
-                    <h3>Leather Jacket</h3>
-                    <div class="product-meta">
-                        <p class="price" data-original="$99.99">$49.99</p>
-                        <div class="colors">
-                            <span class="color" style="background: #000"></span>
-                            <span class="color" style="background: #8b4513"></span>
-                        </div>
-                    </div>
-                    <select class="size-select">
-                        <option value="">Select Size</option>
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                    </select>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
+    <!-- New Featured Promotions Section -->
+    <section class="featured-promotions max-w-7xl mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold mb-8 text-center">Featured Promotions</h2>
+        <div class="promo-grid grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="promo-item text-center">
+                <img src="https://picsum.photos/300/200" alt="Promo 1" class="mb-4 mx-auto">
+                <h3 class="text-xl font-semibold">Free Shipping</h3>
+                <p>Orders over $50</p>
             </div>
-            <div class="product-card" data-category="women">
-                <span class="product-badge badge-new">New</span>
-                <div class="product-image">
-                    <img src="https://picsum.photos/300/401" alt="Floral Dress">
-                    <button class="wishlist-toggle" aria-label="Add to Wishlist">
-                        <i class="far fa-heart"></i>
-                    </button>
-                    <div class="quick-add">Quick View</div>
-                </div>
-                <div class="product-info">
-                    <h3>Floral Dress</h3>
-                    <div class="product-meta">
-                        <p class="price">$39.99</p>
-                        <div class="colors">
-                            <span class="color" style="background: #ff69b4"></span>
-                            <span class="color" style="background: #87ceeb"></span>
-                        </div>
-                    </div>
-                    <select class="size-select">
-                        <option value="">Select Size</option>
-                        <option value="XS">XS</option>
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                    </select>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
+            <div class="promo-item text-center">
+                <img src="https://picsum.photos/300/201" alt="Promo 2" class="mb-4 mx-auto">
+                <h3 class="text-xl font-semibold">Buy 1, Get 1 50% Off</h3>
+                <p>Limited time offer</p>
+            </div>
+            <div class="promo-item text-center">
+                <img src="https://picsum.photos/300/202" alt="Promo 3" class="mb-4 mx-auto">
+                <h3 class="text-xl font-semibold">Loyalty Rewards</h3>
+                <p>Earn points with every purchase</p>
             </div>
         </div>
     </section>
 
-    <!-- Featured Products -->
-    <section class="featured-products">
-        <h2>Shop Our Best Sellers</h2>
-        <div class="filter-controls">
-            <button class="filter-btn active" data-category="all">All</button>
-            <button class="filter-btn" data-category="men">Men</button>
-            <button class="filter-btn" data-category="women">Women</button>
-            <button class="filter-btn" data-category="accessories">Accessories</button>
-        </div>
-        <div class="sort-filter">
-            <label for="sort">Sort by:</label>
-            <select id="sort">
-                <option value="name-asc">Name (A-Z)</option>
-                <option value="name-desc">Name (Z-A)</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
-            </select>
-        </div>
-        <div class="products-grid">
-            <div class="product-card" data-category="men">
-                <span class="product-badge badge-new">New</span>
-                <div class="product-image">
-                    <img src="https://picsum.photos/300/402" alt="Cotton T-Shirt">
-                    <button class="wishlist-toggle" aria-label="Add to Wishlist">
-                        <i class="far fa-heart"></i>
-                    </button>
-                    <div class="quick-add">Quick View</div>
-                </div>
-                <div class="product-info">
-                    <h3>Premium Cotton T-Shirt</h3>
-                    <div class="product-meta">
-                        <p class="price">$24.99</p>
-                        <div class="colors">
-                            <span class="color" style="background: #000"></span>
-                            <span class="color" style="background: #fff"></span>
-                            <span class="color" style="background: #0984e3"></span>
-                        </div>
-                    </div>
-                    <select class="size-select">
-                        <option value="">Select Size</option>
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                        <option value="XL">XL</option>
-                    </select>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product-card" data-category="women">
-                <div class="product-image">
-                    <img src="https://picsum.photos/300/403" alt="Silk Scarf">
-                    <button class="wishlist-toggle" aria-label="Add to Wishlist">
-                        <i class="far fa-heart"></i>
-                    </button>
-                    <div class="quick-add">Quick View</div>
-                </div>
-                <div class="product-info">
-                    <h3>Silk Scarf</h3>
-                    <div class="product-meta">
-                        <p class="price">$15.50</p>
-                        <div class="colors">
-                            <span class="color" style="background: #ff4757"></span>
-                        </div>
-                    </div>
-                    <select class="size-select">
-                        <option value="">Select Size</option>
-                        <option value="One Size">One Size</option>
-                    </select>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product-card" data-category="accessories">
-                <span class="product-badge badge-sale">30% Off</span>
-                <div class="product-image">
-                    <img src="https://picsum.photos/300/404" alt="Leather Belt">
-                    <button class="wishlist-toggle" aria-label="Add to Wishlist">
-                        <i class="far fa-heart"></i>
-                    </button>
-                    <div class="quick-add">Quick View</div>
-                </div>
-                <div class="product-info">
-                    <h3>Leather Belt</h3>
-                    <div class="product-meta">
-                        <p class="price" data-original="$29.99">$20.99</p>
-                        <div class="colors">
-                            <span class="color" style="background: #8b4513"></span>
-                            <span class="color" style="background: #000"></span>
-                        </div>
-                    </div>
-                    <select class="size-select">
-                        <option value="">Select Size</option>
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                    </select>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product-card" data-category="women">
-                <span class="product-badge badge-new">New</span>
-                <div class="product-image">
-                    <img src="https://picsum.photos/300/405" alt="Denim Jeans">
-                    <button class="wishlist-toggle" aria-label="Add to Wishlist">
-                        <i class="far fa-heart"></i>
-                    </button>
-                    <div class="quick-add">Quick View</div>
-                </div>
-                <div class="product-info">
-                    <h3>High-Waisted Denim Jeans</h3>
-                    <div class="product-meta">
-                        <p class="price">$59.99</p>
-                        <div class="colors">
-                            <span class="color" style="background: #483d8b"></span>
-                            <span class="color" style="background: #000080"></span>
-                        </div>
-                    </div>
-                    <select class="size-select">
-                        <option value="">Select Size</option>
-                        <option value="28">28</option>
-                        <option value="30">30</option>
-                        <option value="32">32</option>
-                    </select>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product-card" data-category="men">
-                <div class="product-image">
-                    <img src="https://picsum.photos/300/406" alt="Sneakers">
-                    <button class="wishlist-toggle" aria-label="Add to Wishlist">
-                        <i class="far fa-heart"></i>
-                    </button>
-                    <div class="quick-add">Quick View</div>
-                </div>
-                <div class="product-info">
-                    <h3>Classic Sneakers</h3>
-                    <div class="product-meta">
-                        <p class="price">$79.99</p>
-                        <div class="colors">
-                            <span class="color" style="background: #fff"></span>
-                            <span class="color" style="background: #000"></span>
-                            <span class="color" style="background: #ff4500"></span>
-                        </div>
-                    </div>
-                    <select class="size-select">
-                        <option value="">Select Size</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product-card" data-category="accessories">
-                <span class="product-badge badge-sale">20% Off</span>
-                <div class="product-image">
-                    <img src="https://picsum.photos/300/407" alt="Sunglasses">
-                    <button class="wishlist-toggle" aria-label="Add to Wishlist">
-                        <i class="far fa-heart"></i>
-                    </button>
-                    <div class="quick-add">Quick View</div>
-                </div>
-                <div class="product-info">
-                    <h3>Polarized Sunglasses</h3>
-                    <div class="product-meta">
-                        <p class="price" data-original="$49.99">$39.99</p>
-                        <div class="colors">
-                            <span class="color" style="background: #000"></span>
-                            <span class="color" style="background: #696969"></span>
-                        </div>
-                    </div>
-                    <select class="size-select">
-                        <option value="">Select Size</option>
-                        <option value="One Size">One Size</option>
-                    </select>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
+    <!-- Integrated ESSENCE Product Grid -->
+    <section id="products" class="max-w-7xl mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold mb-12 text-center">Featured Collection</h2>
+        <div class="products-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4" id="productsGrid">
+            <!-- Products will be inserted here by JavaScript -->
         </div>
     </section>
 
@@ -327,15 +127,15 @@
         <h2>Explore Categories</h2>
         <div class="category-grid">
             <div class="category-card">
-                <img src="https://picsum.photos/400/500" alt="Men's Fashion">
+                <img src="https://picsum.photos/400/500" loading="lazy" alt="Men's Fashion">
                 <h3>Men’s Fashion</h3>
             </div>
             <div class="category-card">
-                <img src="https://picsum.photos/400/501" alt="Women's Fashion">
+                <img src="https://picsum.photos/400/501" loading="lazy" alt="Women's Fashion">
                 <h3>Women’s Fashion</h3>
             </div>
             <div class="category-card">
-                <img src="https://picsum.photos/400/502" alt="Accessories">
+                <img src="https://picsum.photos/400/502" loading="lazy" alt="Accessories">
                 <h3>Accessories</h3>
             </div>
         </div>
